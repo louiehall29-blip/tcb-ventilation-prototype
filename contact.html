@@ -232,6 +232,14 @@ footer{background:var(--black);border-top:1px solid var(--border);padding:56px 8
 </div>
 <script>
 function toggleMenu(){document.getElementById('hbg').classList.toggle('open');document.getElementById('mobMenu').classList.toggle('open');}
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-80,behavior:'smooth'});}
+    });
+  });
+});
 var el=document.getElementById('n-contact');if(el)el.classList.add('active');
 </script>
 
